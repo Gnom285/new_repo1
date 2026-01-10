@@ -1,4 +1,3 @@
 
-num = list(range(18, 0, -4))
-
-print(num)
+numbers = list(range(18, 1, -4))
+print(numbers)

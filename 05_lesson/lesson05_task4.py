@@ -28,6 +28,9 @@ try:
 
     driver.find_element(By.CSS_SELECTOR, "button.radius").click()
 
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.flash.success' )))
+    print( "You logged into a secure area!")
 finally: 
     if driver: driver.quit()
 

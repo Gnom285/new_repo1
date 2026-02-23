@@ -51,4 +51,4 @@ class FormPage:
           if "alert-success" not in self.get_field_class(field):
             return False
     
-            return True
+        return True

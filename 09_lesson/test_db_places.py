@@ -1,5 +1,6 @@
 from models import Place
 
+
 def test_add_place(db_session):
     new_place = Place(name="Эрмитаж", description="Главный музей")
     db_session.add(new_place)
@@ -8,6 +9,7 @@ def test_add_place(db_session):
     result = db_session.query(Place).filter_by(name="Эрмитаж").first()
     assert result is not None
     assert result.description == "Главный музей"
+
 
 def test_update_place(db_session):
     place = Place(name="Парк Горького", description="Старое описание")
@@ -19,6 +21,7 @@ def test_update_place(db_session):
 
     updated = db_session.query(Place).filter_by(id=place.id).first()
     assert updated.description == "Новое описание"
+
 
 def test_delete_place(db_session):
     place = Place(name="Временное место", description="Удалить")
